@@ -10,20 +10,24 @@ import { successMessage } from "./../utils/message";
 export const getAllUsers = () => {
     return async (dispatch) => {
         const { data } = await getUsers();
+        console.log(data)
         await dispatch({ type: "INIT", payload: data.users });
     };
 };
 
 export const createNewUser = (user) => {
     return async (dispatch, getState) => {
+        console.log(user)
         const { data, status } = await newUser(user);
         if (status === 201) successMessage("کاربر با موفقیت ثبت نام شد");
+        console.log(status)
         await dispatch({
             type: "ADD_USER",
             payload: [...getState().users, data.user],
         });
     };
 };
+
 
 export const handleUserUppdate = (user , code  ,newuser) => {
     return async (dispatch, getState) => {

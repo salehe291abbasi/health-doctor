@@ -15,22 +15,25 @@ import Geography from "./scenes/geography";
 import {  CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "./theme";
 import Calendar from "./scenes/calendar/calendar";
-import Login from "./layout/common/login/login";
+import Signup from "./layout/common/login/signup";
+import Login from "./layout/common/login/signin";
 import {ToastContainer} from "react-toastify"
 import { useDispatch , useSelector } from "react-redux";
 import { useEffect } from "react";
 // import { decodeToken } from "./utils/decodeToken";
 import { addUser, clearUser } from "./actions/user";
+import { getAllUsers } from "./actions/users";
 import MainLayout from "./layout/mainlayout";
 import  Home  from "./layout/Home";
+import PersonalLayout from "./layout/personalLayout";
+import axios from "axios";
 function App() {
   const [theme, colorMode] = useMode();
-  const [isSidebar, setIsSidebar] = useState(true);
-  const user = useSelector(state =>state.user)
+  const user = useSelector(state =>state.users)
   const dispatch = useDispatch();
-  const [logined , setLogined] = useState(false)
-  const showdashboard = useSelector(state =>state.dashboardSate)
-  console.log(showdashboard)
+  
+ 
+
   // useEffect(()=>{
   //   const token = localStorage.getItem("token")
   //   if(token) {
@@ -50,30 +53,27 @@ function App() {
         <ToastContainer />
         <CssBaseline />
         <div className="app">
-        
-               {showdashboard &&  <Sidebar isSidebar={isSidebar} />}
-                <main className="content">
-                  {showdashboard && <Topbar setIsSidebar={setIsSidebar} />}
                 
                   <Routes>
                     <Route path="/" element={<MainLayout />} >
-                        <Route path="/" element={<Home />}/>
+                        <Route index element={<Home />}/>
+                        <Route path="signup" element={<Signup />}/>
                         <Route path="login" element={<Login />}/>
                     </Route>
-                    <Route path="/dashboard" element={<Dashboard />} />
-                    <Route path="/team" element={<Team />} />
-                    <Route path="/contacts" element={<Contacts />} />
-                    <Route path="/invoices" element={<Invoices />} />
-                    <Route path="/form" element={<Form />} />
-                    <Route path="/bar" element={<Bar />} />
-                    <Route path="/pie" element={<Pie />} />
-                    <Route path="/line" element={<Line />} />
-                    <Route path="/faq" element={<FAQ />} />
-                    <Route path="/calendar" element={<Calendar />} />
-                    <Route path="/geography" element={<Geography />} />
+                    <Route path="dashboard"  element={<PersonalLayout />} >
+                        <Route index element={<Dashboard />} />
+                        <Route path="team" element={<Team />} />
+                        <Route path="contacts" element={<Contacts />} />
+                        <Route path="invoices" element={<Invoices />} />
+                        <Route path="form" element={<Form />} />
+                        <Route path="bar" element={<Bar />} />
+                        <Route path="pie" element={<Pie />} />
+                        <Route path="line" element={<Line />} />
+                        <Route path="faq" element={<FAQ />} />
+                        <Route path="calendar" element={<Calendar />} />
+                        <Route path="geography" element={<Geography />} /> 
+                     </Route>
                   </Routes>
-              
-                </main>
          
         </div>
       </ThemeProvider>

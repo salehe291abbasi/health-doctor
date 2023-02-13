@@ -14,8 +14,8 @@ import css from './style.module.css'
 
 const data = [
   { icon: <FaceRounded/>, label: 'ورود / ثبت نام',url:"login" },
-  { icon: <PermPhoneMsgRounded />, label: 'ارتباط با ما' ,url:""},
-  { icon: <LightbulbRounded />, label: 'درباره ما' ,url:""},
+  { icon: <PermPhoneMsgRounded />, label: 'ارتباط با ما' ,url:"dashboard"},
+  { icon: <LightbulbRounded />, label: 'درباره ما' ,url:"signup"},
   { icon: <HomeRounded />, label: 'خانه' ,url:"/"},
 ];
 

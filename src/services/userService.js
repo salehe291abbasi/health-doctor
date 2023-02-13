@@ -1,6 +1,8 @@
 import http from "./httpServices";
 import config from "./config.json";
 
+
+
 export const getUsers = () => {
     return http.get(`${config.baseurl}/user`);
 };

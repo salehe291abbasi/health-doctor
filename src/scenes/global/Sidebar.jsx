@@ -119,7 +119,7 @@ const Sidebar = () => {
           <Box paddingLeft={isCollapsed ? undefined : "10%"}>
             <Item
               title="داشبورد"
-              to="/"
+              to="/dashboard"
               icon={<HomeOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
@@ -134,21 +134,21 @@ const Sidebar = () => {
             </Typography>
             <Item
               title="مدیریت تیم"
-              to="/team"
+              to="/dashboard/team"
               icon={<PeopleOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
               title="اطلاعات تماس"
-              to="/contacts"
+              to="/dashboard/contacts"
               icon={<ContactsOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
               title="مانده فاکتورها"
-              to="/invoices"
+              to="/dashboard/invoices"
               icon={<ReceiptOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
@@ -163,21 +163,21 @@ const Sidebar = () => {
             </Typography>
             <Item
               title="فرم پروفایل"
-              to="/form"
+              to="/dashboard/form"
               icon={<PersonOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
               title="تقویم"
-              to="/calendar"
+              to="/dashboard/calendar"
               icon={<CalendarTodayOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
               title="صفحه پرسش و پاسخ"
-              to="/faq"
+              to="/dashboard/faq"
               icon={<HelpOutlineOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
@@ -192,28 +192,28 @@ const Sidebar = () => {
             </Typography>
             <Item
               title="نمودار بار"
-              to="/bar"
+              to="/dashboard/bar"
               icon={<BarChartOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
               title="نمودار پای"
-              to="/pie"
+              to="/dashboard/pie"
               icon={<PieChartOutlineOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
               title="نمودار خطی"
-              to="/line"
+              to="/dashboard/line"
               icon={<TimelineOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
               title="نمودار جغرافیایی"
-              to="/geography"
+              to="/dashboard/geography"
               icon={<MapOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
