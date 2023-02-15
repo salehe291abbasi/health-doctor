@@ -41,11 +41,14 @@ axios.defaults.headers.get["Access-Control-Allow-Credentials"] = true;
 
 //     return Promise.reject(error);
 // });
-console.log("post data")
-const data1 = {username:"salehe",password:"87652516",email:"salehe@gmail.com",phone_number:"09271683629"}
-instance.post("/user",data1).then(function(res){
-    console.log(res)
-})
+// console.log("post data")
+// const data1 = {username:"salehe",password:"87652516",email:"salehe@gmail.com",phone_number:"09271683629"}
+// instance.post("/user",data1).then(function(res){
+//     console.log(res)
+// })
+// instance.get("/user").then(function(res){
+//     console.log(res)
+// })
 export default {
     get: instance.get,
     post: instance.post

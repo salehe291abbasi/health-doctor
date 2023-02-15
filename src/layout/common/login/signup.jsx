@@ -1,34 +1,32 @@
 import "./signup.css"
 import Box from "@mui/material/Box"
 import { useSelector , useDispatch } from "react-redux";
-import {Navigate , Link} from "react-router-dom"
-import { replace } from "lodash";
-import { useState } from "react";
+import { Link} from "react-router-dom"
 import {  createNewUser} from "../../../actions/users"
 //  import { userSchema , Initialize } from "../../../utils/schema";
-import {Formik , Field , ErrorMessage , Form} from "formik"
+import {Formik } from "formik"
 import * as Yup from "yup"
 function Signup() {
-  const [email , setEmail] = useState("")
-  const [username , setusername] = useState("")
-  const [password , setPassword] = useState("")
-  const [phone , setPhone] = useState("")
-  const dispatch = useDispatch();
+  // const [email , setEmail] = useState("")
+  // const [username , setusername] = useState("")
+  // const [password , setPassword] = useState("")
+  // const [phone , setPhone] = useState("")
+  // const dispatch = useDispatch();
  
 
-  const handleSubmit = event =>{
-    console.log("sign in form")
-    const user = {
-      username,
-      password,
-      email,
-      phone_number:phone
-    }
-    console.log(user)
-    dispatch(createNewUser(user))
-    event.preventDefault();
+  // const handleSubmit = event =>{
+  //   console.log("sign in form")
+  //   const user = {
+  //     username,
+  //     password,
+  //     email,
+  //     phone_number:phone
+  //   }
+  //   console.log(user)
+  //   dispatch(createNewUser(user))
+  //   event.preventDefault();
     
-  }
+  // }
   return (
     <Box className="contlogin" sx={{direction:"rtl"}}>
       <div className="MainContainer">
@@ -39,7 +37,7 @@ function Signup() {
        validationSchema={Yup.object({
          username: Yup.string("نام کاربری را درست وارد کنید").required('وارد کردن نام کاربری الزامیست'),
          email: Yup.string().required('وارد کردن ایمیل الزامیست').email("لطفا ایمیل معتبر وارد کنید"),
-         password: Yup.string().max(8 ,"پسورد حداقل 8 کاراکتر باشد").required('وارد کردن پسورد الزامیست'),
+         password: Yup.string().min(8 ,"پسورد حداقل 8 کاراکتر باشد").required('وارد کردن پسورد الزامیست'),
          phone:Yup.string().required("وارد کردن تلفن همراه الزامیست").matches("09(1[0-9]|3[1-9]|2[1-9])-?[0-9]{3}-?[0-9]{4}","لطفا شماره تلفن معتبر وارد کنید")
        })}
        onSubmit={(values, { setSubmitting }) => {
