@@ -18,41 +18,34 @@ import Calendar from "./scenes/calendar/calendar";
 import Signup from "./layout/common/login/signup";
 import Login from "./layout/common/login/signin";
 import {ToastContainer} from "react-toastify"
-import { useDispatch , useSelector } from "react-redux";
 import { useEffect } from "react";
 // import { decodeToken } from "./utils/decodeToken";
-import { addUser, clearUser } from "./actions/user";
-import { getAllUsers } from "./actions/users";
 import MainLayout from "./layout/mainlayout";
 import  Home  from "./layout/Home";
 import PersonalLayout from "./layout/personalLayout";
-import axios from "axios";
+import {toast} from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css';
 function App() {
   const [theme, colorMode] = useMode();
-  const user = useSelector(state =>state.users)
-  const dispatch = useDispatch();
-  
- 
 
-  // useEffect(()=>{
-  //   const token = localStorage.getItem("token")
-  //   if(token) {
-  //     const decodeToken = decodeToken(token)
-  //     const dateNow = Date.now()/1000
-  //       if(decodeToken.payload.exp<dateNow){
-  //         localStorage.removeItem("token")
-  //         dispatch(clearUser())
-  //       }else{
-  //         dispatch(addUser(decodeToken.payload.user))
-  //       }
-  //   }
-  // },[])
+
+  
+  useEffect(()=>{
+  
+
+    // const token = localStorage.getItem("token")
+    // const token = "ygyguyg"
+    // if(token) {
+    //   const decodeToken = decodeToken(token)
+      
+    // }
+   },[])
   return (
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
-        <ToastContainer />
         <CssBaseline />
         <div className="app">
+        <ToastContainer style={{ fontFamily: 'BYekan' }}/>
                 
                   <Routes>
                     <Route path="/" element={<MainLayout />} >

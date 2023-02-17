@@ -1,32 +1,15 @@
 import "./signup.css"
 import Box from "@mui/material/Box"
 import { useSelector , useDispatch } from "react-redux";
-import { Link} from "react-router-dom"
-import {  createNewUser} from "../../../actions/users"
-//  import { userSchema , Initialize } from "../../../utils/schema";
+import { Link , useNavigate} from "react-router-dom"
+import { createNewUser } from "../../../actions/users";
+
 import {Formik } from "formik"
 import * as Yup from "yup"
 function Signup() {
-  // const [email , setEmail] = useState("")
-  // const [username , setusername] = useState("")
-  // const [password , setPassword] = useState("")
-  // const [phone , setPhone] = useState("")
-  // const dispatch = useDispatch();
- 
-
-  // const handleSubmit = event =>{
-  //   console.log("sign in form")
-  //   const user = {
-  //     username,
-  //     password,
-  //     email,
-  //     phone_number:phone
-  //   }
-  //   console.log(user)
-  //   dispatch(createNewUser(user))
-  //   event.preventDefault();
-    
-  // }
+  const navigate = useNavigate()
+  const dispatch = useDispatch();
+   
   return (
     <Box className="contlogin" sx={{direction:"rtl"}}>
       <div className="MainContainer">
@@ -41,9 +24,14 @@ function Signup() {
          phone:Yup.string().required("وارد کردن تلفن همراه الزامیست").matches("09(1[0-9]|3[1-9]|2[1-9])-?[0-9]{3}-?[0-9]{4}","لطفا شماره تلفن معتبر وارد کنید")
        })}
        onSubmit={(values, { setSubmitting }) => {
-         setTimeout(() => {
-           alert(JSON.stringify(values, null, 2));
-           setSubmitting(false);
+         setTimeout(async () => {
+          const res = await dispatch(createNewUser(values.username , values.password , values.email , values.phone))
+          if(res.status===201){
+            localStorage.setItem("username" , values.username)
+            navigate("/dashboard")
+            
+           }
+          setSubmitting(false);
          }, 400);
        }}
      >

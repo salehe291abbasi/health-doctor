@@ -9,22 +9,26 @@ import { successMessage } from "./../utils/message";
 
 export const getAllUsers = () => {
     return async (dispatch) => {
-        const { data } = await getUsers();
-        console.log(data)
+        const  data  = await getUsers();
         await dispatch({ type: "INIT", payload: data.users });
     };
 };
 
-export const createNewUser = (user) => {
+export const createNewUser = (username , password , email , phone) => {
     return async (dispatch, getState) => {
-        console.log(user)
-        const { data, status } = await newUser(user);
-        if (status === 201) successMessage("کاربر با موفقیت ثبت نام شد");
-        console.log(status)
+        const user = {username , password , email , phone}
+        const  data = await newUser(username , password , email , phone);
         await dispatch({
             type: "ADD_USER",
-            payload: [...getState().users, data.user],
+            payload: [...getState().users, user],
         });
+
+
+        await dispatch({
+            type:"SET_USER",
+            payload:username
+        })
+        return data;
     };
 };
 
@@ -35,15 +39,7 @@ export const handleUserUppdate = (user , code  ,newuser) => {
         const filteredUsers = users.filter(
             (user1) => user1.id !== user.id
         );
-        // const updatedCourses = [...courses];
-        // const courseIndex = updatedCourses.findIndex(
-        //     (course) => course._id == courseId
-        // );
-
-        // let course = updatedCourses[courseIndex];
-
-        // course = { ...Object.fromEntries(updatedCourse) };
-        // updatedCourses[courseIndex] = course;
+ 
 
         try {
             const { data, status } = await updateUser(

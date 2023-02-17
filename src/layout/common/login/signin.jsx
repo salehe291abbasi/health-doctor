@@ -1,31 +1,20 @@
 import "./signup.css"
 import Box from "@mui/material/Box"
 import { useSelector , useDispatch } from "react-redux";
-import {Navigate , Link} from "react-router-dom"
-//  import { userSchema , Initialize } from "../../../utils/schema";
+import {useNavigate , Link} from "react-router-dom"
 import {Formik } from "formik"
 import * as Yup from "yup"
+import { loginUser } from "../../../services/userService";
+import { setUser } from "../../../actions/user";
+import { useEffect, useState } from "react";
+// import apigetlogincode from "../../../services/httpServices"
 function Login() {
-  // const [email , setEmail] = useState("")
-  // const [username , setusername] = useState("")
-  // const [password , setPassword] = useState("")
-  // const [phone , setPhone] = useState("")
-  // const dispatch = useDispatch();
- 
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
+  const users = useSelector(state => state.users)
 
-  // const handleSubmit = event =>{
-  //   console.log("sign in form")
-  //   const user = {
-  //     username,
-  //     password,
-  //     email,
-  //     phone_number:phone
-  //   }
-  //   console.log(user)
-  //   dispatch(createNewUser(user))
-  //   event.preventDefault();
-    
-  // }
+
+ 
   return (
     <Box className="contlogin" sx={{direction:"rtl"}}>
       <div className="MainContainer signin">
@@ -39,8 +28,13 @@ function Login() {
          select: Yup.string().required("لطفا حتما نوع ورود خود را انتخاب کنید ")
         })}
        onSubmit={(values, { setSubmitting }) => {
-         setTimeout(() => {
-           alert(JSON.stringify(values, null, 2));
+         setTimeout(async() => {
+           const response =await loginUser(values.username , values.password)
+           
+           if(response.status ===200){
+            localStorage.setItem("username",values.username)
+            navigate("/dashboard")
+           }
            setSubmitting(false);
          }, 400);
        }}

@@ -12,10 +12,32 @@ import GeographyChart from "../../components/GeographyChart";
 import BarChart from "../../components/BarChart";
 import StatBox from "../../components/StatBox";
 import ProgressCircle from "../../components/ProgressCircle";
+import { useDispatch , useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import _ from "lodash"
+import { useEffect } from "react";
+import { getAllUsers } from "../../actions/users";
 
 const Dashboard = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
+  dispatch(getAllUsers())
+  const users = useSelector(state => state.users)
+
+  useEffect(()=>{
+    const username = localStorage.getItem("username")
+    console.log("username")
+    console.log(username)
+    
+    let user = users.find(item=> item._source.username ===username)
+      console.log(user)
+    if(!username){
+      navigate("/login")
+    }
+  },[])
+  
 
   return (
     <Box m="20px">
