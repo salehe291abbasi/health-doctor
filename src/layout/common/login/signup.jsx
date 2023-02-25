@@ -6,6 +6,7 @@ import { createNewUser } from "../../../actions/users";
 
 import {Formik } from "formik"
 import * as Yup from "yup"
+import { setUser } from "../../../actions/user";
 function Signup() {
   const navigate = useNavigate()
   const dispatch = useDispatch();
@@ -27,6 +28,8 @@ function Signup() {
          setTimeout(async () => {
           const res = await dispatch(createNewUser(values.username , values.password , values.email , values.phone))
           if(res.status===201){
+            const user = {username:values.username , password:values.password , email:values.email , phone:values.phone}
+            dispatch(setUser(user))
             localStorage.setItem("username" , values.username)
             navigate("/dashboard")
             

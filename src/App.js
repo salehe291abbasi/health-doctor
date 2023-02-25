@@ -15,6 +15,8 @@ import Geography from "./scenes/geography";
 import {  CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "./theme";
 import Calendar from "./scenes/calendar/calendar";
+import Profile from "./scenes/profile/profile.jsx";
+import Notfound from "./scenes/not-found/notfound.jsx";
 import Signup from "./layout/common/login/signup";
 import Login from "./layout/common/login/signin";
 import {ToastContainer} from "react-toastify"
@@ -22,6 +24,8 @@ import { useEffect } from "react";
 // import { decodeToken } from "./utils/decodeToken";
 import MainLayout from "./layout/mainlayout";
 import  Home  from "./layout/Home";
+import  Aboutus  from "./layout/aboutus/aboutus.jsx";
+import  Contactus  from "./layout/contactus/contactus.jsx";
 import PersonalLayout from "./layout/personalLayout";
 import {toast} from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css';
@@ -50,8 +54,9 @@ function App() {
                   <Routes>
                     <Route path="/" element={<MainLayout />} >
                         <Route index element={<Home />}/>
-                        <Route path="signup" element={<Signup />}/>
-                        <Route path="login" element={<Login />}/>
+                        <Route path="aboutus" element={<Aboutus />}/>
+                        <Route path="contactus" element={<Contactus />}/>
+                        <Route path="*" element={<Notfound />}/>
                     </Route>
                     <Route path="dashboard"  element={<PersonalLayout />} >
                         <Route index element={<Dashboard />} />
@@ -65,7 +70,12 @@ function App() {
                         <Route path="faq" element={<FAQ />} />
                         <Route path="calendar" element={<Calendar />} />
                         <Route path="geography" element={<Geography />} /> 
+                        <Route path="setingprofile" element={<Profile />} /> 
+                        <Route path="*" element={<Notfound />}/>
                      </Route>
+                      <Route path="signup" element={<Signup />}/>
+                      <Route path="login" element={<Login />}/>
+                      <Route path="*" element={<Notfound />}/>
                   </Routes>
          
         </div>

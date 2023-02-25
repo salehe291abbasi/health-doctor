@@ -23,17 +23,13 @@ const Dashboard = () => {
   const colors = tokens(theme.palette.mode);
   const navigate = useNavigate()
   const dispatch = useDispatch()
-  dispatch(getAllUsers())
   const users = useSelector(state => state.users)
-
+  const user = useSelector(state => state.user)
+  
   useEffect(()=>{
-    const username = localStorage.getItem("username")
-    console.log("username")
-    console.log(username)
-    
-    let user = users.find(item=> item._source.username ===username)
-      console.log(user)
-    if(!username){
+    dispatch(getAllUsers())
+    console.log(user)
+    if(_.isEmpty(user)){
       navigate("/login")
     }
   },[])

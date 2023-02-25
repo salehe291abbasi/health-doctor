@@ -10,6 +10,7 @@ import { successMessage } from "./../utils/message";
 export const getAllUsers = () => {
     return async (dispatch) => {
         const  data  = await getUsers();
+        console.log("users (action get all users:)",data.users)
         await dispatch({ type: "INIT", payload: data.users });
     };
 };

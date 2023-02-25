@@ -32,11 +32,14 @@ function Login() {
            const response =await loginUser(values.username , values.password)
            
            if(response.status ===200){
+            // const user = users.find(item => item);
+            const user = {username:values.username , password:values.password , email:"" , phone:""}
+            dispatch(setUser(user))
             localStorage.setItem("username",values.username)
             navigate("/dashboard")
            }
            setSubmitting(false);
-         }, 400);
+         }, 40);
        }}
      >
        {formik => (
