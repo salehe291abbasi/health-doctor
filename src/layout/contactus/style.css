@@ -12,6 +12,18 @@
     height: auto;
     border-radius: 14px;
     margin: 0px auto;
+    animation: anim 2s infinite ease-out;
+}
+@keyframes anim {
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(-20px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
 }
 .contactus .container{
     direction: rtl!important;
@@ -23,8 +35,22 @@
     background-color: #ecf0f3;
     box-shadow: 10px 10px 24px rgba(166,180,200, 0.7),
                 -10px -10px 24px #fff;
+    animation: anim2 2s infinite ease-in-out;
 }
-
+@keyframes anim2 {
+    0%{
+        box-shadow: 10px 10px 24px rgba(166,180,200, 0.7),
+                -10px -10px 24px #fff;
+    }
+    50%{
+        box-shadow: 10px 10px 24px rgba(166,180,200, 0.001),
+        -10px -10px 24px rgba(255,255,255,0.5);
+    }
+    100%{
+        box-shadow: 10px 10px 24px rgba(166,180,200, 0.7),
+                -10px -10px 24px #fff;
+    }
+}
 .contactus form{
     padding: 10px 15px;
     font-family: "BYekan";

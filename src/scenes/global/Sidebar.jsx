@@ -13,6 +13,7 @@ import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined
 import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
 import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
 import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutlined";
+import ContentPasteIcon from '@mui/icons-material/ContentPaste';
 import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
@@ -107,7 +108,7 @@ const Sidebar = () => {
                   fontWeight="bold"
                   sx={{ m: "10px 0 5px 0" }}
                 >
-                   مریم شیخ سفلی
+                     مهناز کریمی
                 </Typography>
                 <Typography variant="h5" color={colors.greenAccent[500]}>
                   مدیر سایت
@@ -131,6 +132,13 @@ const Sidebar = () => {
               selected={selected}
               setSelected={setSelected}
             />
+            <Item
+              title="پرونده پزشکی"
+              to="/dashboard/healthinfo"
+              icon={<ContentPasteIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            />
             <Typography
               variant="h6"
               color={colors.grey[300]}
@@ -139,7 +147,7 @@ const Sidebar = () => {
               داده ها
             </Typography>
             <Item
-              title="مدیریت تیم"
+              title="مدیریت کاربران"
               to="/dashboard/team"
               icon={<PeopleOutlinedIcon />}
               selected={selected}
@@ -153,7 +161,7 @@ const Sidebar = () => {
               setSelected={setSelected}
             />
             <Item
-              title="مانده فاکتورها"
+              title="لیست سلامت جویان"
               to="/dashboard/invoices"
               icon={<ReceiptOutlinedIcon />}
               selected={selected}

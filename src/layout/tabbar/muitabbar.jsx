@@ -96,7 +96,11 @@ export default function PrimarySearchAppBar() {
     handleMobileMenuClose();
     navigate("/dashboard")
   };
-
+  const handleMenuCloseprof = () => {
+    setAnchorEl(null);
+    handleMobileMenuClose();
+    navigate("/dashboard/setingprofile")
+  };
   const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
@@ -119,7 +123,7 @@ export default function PrimarySearchAppBar() {
       onClose={handleMenuClose}
       sx={{zIndex:"999999"}}
     >
-      <MenuItem onClick={handleMenuClose}>پروفایل</MenuItem>
+      <MenuItem onClick={handleMenuCloseprof}>پروفایل</MenuItem>
       <MenuItem onClick={handleMenuClose}>اکانت من</MenuItem>
     </Menu>
   );

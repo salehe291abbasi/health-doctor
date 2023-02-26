@@ -73,7 +73,9 @@ function Signup() {
          </form>
        )}
      </Formik>
-      <Box sx={{direction:"rtl", color:"rgba(23, 98, 130,0.5)"}}>آیا از قبل اکانت دارید؟ <Link to="/login"> از این جا وارد شوید </Link></Box>
+      <Box sx={{direction:"rtl", color:"rgba(23, 98, 130,0.8)"}}>آیا از قبل اکانت دارید؟ <Link to="/login"> از این جا وارد شوید </Link></Box>
+      <Box sx={{direction:"rtl", color:"rgba(23, 98, 130,0.5)"}}><Link to="/">برگشت به صفحه اصلی</Link></Box>
+
     </div>
     </Box>
   );

@@ -16,6 +16,8 @@ import {  CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "./theme";
 import Calendar from "./scenes/calendar/calendar";
 import Profile from "./scenes/profile/profile.jsx";
+import HealthInfo from "./scenes/healthinfo/index.jsx";
+import EditHealthInfo from "./scenes/edithealthinfo/index.jsx";
 import Notfound from "./scenes/not-found/notfound.jsx";
 import Signup from "./layout/common/login/signup";
 import Login from "./layout/common/login/signin";
@@ -71,6 +73,8 @@ function App() {
                         <Route path="calendar" element={<Calendar />} />
                         <Route path="geography" element={<Geography />} /> 
                         <Route path="setingprofile" element={<Profile />} /> 
+                        <Route path="healthinfo" element={<HealthInfo />} /> 
+                        <Route path="edithealthinfo" element={<EditHealthInfo />} /> 
                         <Route path="*" element={<Notfound />}/>
                      </Route>
                       <Route path="signup" element={<Signup />}/>

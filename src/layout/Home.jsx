@@ -1,7 +1,8 @@
 import { useTheme ,Box , Typography} from "@mui/material";
 import Button from "@mui/material/Button";
-import Slider from "../components/slider/Slider.jsx"
-
+import Slider from "../components/slider/Slider.jsx";
+import Timeline from "../components/Timeline/timeline.jsx";
+import Anim from "../components/imganim/index";
 const Home = ()=>{
     const theme = useTheme()
     return(
@@ -18,10 +19,17 @@ const Home = ()=>{
                     <Button sx={{borderRadius:"30px",background:"white",border:"1px solid white" , color:"rgb(102, 118, 154)",fontSize:"15px",padding:"6px 20px","&:hover ":{background:"none",color:"white"}}}>اطلاعات بیشتر</Button>
                  </Box>
             </Box>
+            <Box>
+                <Anim />
+            </Box>
+            <Box sx={{width:{xs:"90%",md:"60%"},margin:"0px auto",zIndex:"999"}}>
+                <Timeline />
+            </Box>
             <Box sx={{width:"100%",zIndex:"999" }}>
                 <Slider />
             </Box>
-          
+            
+            
         </Box>
         </>
     )

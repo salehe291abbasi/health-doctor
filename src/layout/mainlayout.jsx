@@ -6,7 +6,7 @@ import { Outlet } from "react-router-dom";
 const MainLayout = ()=>{
     return(
         <>
-            <Box sx={{width:1,height:"100vh"}}>
+            <Box sx={{width:1,height:"100vh", overflow:"auto"}}>
                 <AppBar />
                 <Outlet />
                 
