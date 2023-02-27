@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Grid, Typography } from '@mui/material';
-import AboutUsImage from "../../assets/img/icons img/vector.jpg";
+import AboutUsImage from "../../assets/img/icons img/services.jpg";
 import OurServices from './OurServices';
 import Card from "./card/index"
 import ImageSlider from "./SliderTop/ImageSlider2";

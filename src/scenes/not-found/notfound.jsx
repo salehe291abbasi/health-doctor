@@ -32,7 +32,7 @@ const Notf = ()=>{
             <div className="error__content">
                 <div className="error__message message">
                 <h1 className="message__title">چنین صفحه ای وجود ندارد</h1>
-                <p className="message__text">ما متاسفیم ! صفحه ای که به دنبال آن هستید این جا وجود نداد . برای برگشت به خانه روی دکمه ی زیر کلید کنید</p>
+                <p className="message__text"> برای برگشت به خانه روی دکمه ی زیر کلید کنید</p>
                 </div>
                 <div className="error__nav e-nav">
                 <a href="" className="e-nav__link" onClick={()=>navigate("/")}></a>

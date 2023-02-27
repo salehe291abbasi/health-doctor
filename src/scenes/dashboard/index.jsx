@@ -26,14 +26,7 @@ const Dashboard = () => {
   const users = useSelector(state => state.users)
   const user = useSelector(state => state.user)
   
-  useEffect(()=>{
-    dispatch(getAllUsers())
-    console.log(user)
-    if(_.isEmpty(user)){
-      navigate("/login")
-    }
-  },[])
-  
+ 
 
   return (
     <Box m="20px">
