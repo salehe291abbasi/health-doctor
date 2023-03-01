@@ -12,7 +12,7 @@
     height: auto;
     border-radius: 14px;
     margin: 0px auto;
-    animation: anim 2s infinite ease-out;
+    animation: anim 3s infinite ease-out;
 }
 @keyframes anim {
     0%{

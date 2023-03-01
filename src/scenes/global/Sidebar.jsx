@@ -16,6 +16,7 @@ import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutl
 import ContentPasteIcon from '@mui/icons-material/ContentPaste';
 import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
+import VaccinesIcon from '@mui/icons-material/Vaccines';
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
 import PersonIcon from '@mui/icons-material/Person';
 const Item = ({ title, to, icon, selected, setSelected }) => {
@@ -136,6 +137,13 @@ const Sidebar = () => {
               title="پرونده پزشکی"
               to="/dashboard/healthinfo"
               icon={<ContentPasteIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+            <Item
+              title="داروی مصرفی"
+              to="/dashboard/medicin"
+              icon={<VaccinesIcon />}
               selected={selected}
               setSelected={setSelected}
             />

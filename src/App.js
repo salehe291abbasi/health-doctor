@@ -11,6 +11,7 @@ import Form from "./scenes/form";
 import Line from "./scenes/line";
 import Pie from "./scenes/pie";
 import FAQ from "./scenes/faq";
+import Medicin from "./scenes/inputmedicin";
 import Geography from "./scenes/geography";
 import {  CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "./theme";
@@ -75,6 +76,7 @@ function App() {
                         <Route path="setingprofile" element={<Profile />} /> 
                         <Route path="healthinfo" element={<HealthInfo />} /> 
                         <Route path="edithealthinfo" element={<EditHealthInfo />} /> 
+                        <Route path="medicin" element={<Medicin />} /> 
                         <Route path="*" element={<Notfound />}/>
                      </Route>
                       <Route path="signup" element={<Signup />}/>

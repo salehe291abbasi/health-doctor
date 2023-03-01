@@ -1,9 +1,10 @@
 import React from 'react';
 import { Box, Grid, Typography } from '@mui/material';
-import AboutUsImage from "../../assets/img/icons img/services.jpg";
+import AboutUsImage from "../../assets/img/icons img2/m2.png";
 import OurServices from './OurServices';
 import Card from "./card/index"
 import ImageSlider from "./SliderTop/ImageSlider2";
+import "./style.css"
 
 
 const AboutUsPage = () => {
@@ -17,10 +18,10 @@ const AboutUsPage = () => {
       <Grid container spacing={3} sx={{mt:15,direction:"rtl"}}>
        
         <Grid item xs={12} md={6}>
-          <img src={AboutUsImage} alt="تصویر درباره ما" style={{ width: '80%', borderRadius: '15px' }} />
+          <img src={AboutUsImage} className="imgaboutus" alt="تصویر درباره ما" style={{ width: '100%', borderRadius: '15px' }} />
         </Grid>
         <Grid item xs={12} md={6}>
-         <Box sx={{boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
+         <Box className="boxaboutus" sx={{boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
                     backdropFilter: "blur(8.5px)",border:"1px solid white" , borderRadius:"15px",p:5}}>
             <Typography variant="h3" sx={{ marginBottom: '1rem', color: 'rgb(4, 145, 152)' }}>درباره ما</Typography>
               <Typography variant="body1" sx={{ marginBottom: '1rem', lineHeight: 1.8 }}>
